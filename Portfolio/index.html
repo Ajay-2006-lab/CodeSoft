@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ajay Kumar - Creative Developer</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #e9eff5;
+      color: #222;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    nav.navbar {
+      background: linear-gradient(90deg, #1a3150, #112244);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav.navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+    }
+
+    nav.navbar a {
+      text-decoration: none;
+      color: #e3e7f8;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav.navbar a:hover,
+    nav.navbar a:focus {
+      color: #f6b61a;
+      outline: none;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #396afc, #2948ff);
+      border-radius: 0 0 48px 48px;
+      padding: 100px 0 70px;
+      color: #fff;
+      text-align: center;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      margin: 0;
+      letter-spacing: 1.2px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero p {
+      margin: 18px auto 0 auto;
+      max-width: 650px;
+      font-size: 1.2rem;
+      color: #dbe3f9;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .hero button.btn {
+      margin-top: 36px;
+      padding: 14px 40px;
+      border-radius: 50px;
+      border: none;
+      background: #f6b61a;
+      color: #112244;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(246, 182, 26, 0.5);
+    }
+
+    .hero button.btn:hover,
+    .hero button.btn:focus {
+      background: #d18e00;
+      transform: scale(1.05);
+      outline: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-top: 60px;
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    .about-section,
+    .skills-section,
+    .projects-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-img {
+      flex: 1 1 260px;
+      text-align: center;
+    }
+
+    .about-img img {
+      width: 260px;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+      transition: transform 0.3s ease;
+    }
+
+    .about-img img:hover {
+      transform: scale(1.05);
+    }
+
+    .about-content {
+      flex: 2 1 480px;
+      padding: 0 1rem;
+    }
+
+    .about-content h2 {
+      color: #2948ff;
+      font-size: 2rem;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .about-content p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .about-content button.btn {
+      margin-top: 24px;
+      background: #2948ff;
+      color: #fff;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 5px 12px rgba(41, 72, 255, 0.4);
+    }
+
+    .about-content button.btn:hover,
+    .about-content button.btn:focus {
+      background: #1a2f99;
+      outline: none;
+    }
+
+    .skills-section {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .skills-section h2 {
+      color: #2948ff;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    .skills-list {
+      list-style: none;
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 700px;
+    }
+
+    .skills-list li {
+      background: #ffb800;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      color: #112244;
+      box-shadow: 0 4px 10px rgba(255, 184, 0, 0.4);
+      transition: background 0.3s ease;
+      cursor: default;
+    }
+
+    .skills-list li:hover {
+      background: #dda300;
+      color: #fff;
+      box-shadow: 0 6px 14px rgba(221, 163, 0, 0.6);
+    }
+
+    .projects-section h2 {
+      color: #2948ff;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .projects-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1140px;
+      margin: auto;
+    }
+
+    .project-item {
+      background: #f3f7ff;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(41, 72, 255, 0.1);
+      padding: 18px 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-item:hover,
+    .project-item:focus-within {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(41, 72, 255, 0.2);
+    }
+
+    .project-item img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      transition: filter 0.3s ease;
+    }
+
+    .project-item:hover img,
+    .project-item:focus-within img {
+      filter: brightness(0.85);
+    }
+
+    .project-item h3 {
+      margin: 0 0 10px 0;
+      color: #1a2f99;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .project-item p {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.3;
+    }
+
+    .contact-section {
+      background: linear-gradient(135deg, #396afc, #2948ff);
+      color: #f5f7ff;
+      border-radius: 18px;
+      padding: 60px 30px;
+      text-align: center;
+      margin-top: 80px;
+      box-shadow: 0 6px 25px rgba(41, 72, 255, 0.3);
+    }
+
+    .contact-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+      color: #ffcb05;
+    }
+
+    .contact-section p {
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    .contact-section a {
+      color: #ffcb05;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-section a:hover,
+    .contact-section a:focus {
+      color: #fff;
+      outline: none;
+    }
+
+    footer {
+      background: #112244;
+      color: #d1d5db;
+      text-align: center;
+      padding: 22px 15px;
+      margin-top: 60px;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 780px) {
+      nav.navbar ul {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .about-section,
+      .skills-section,
+      .projects-section {
+        flex-direction: column;
+        gap: 30px;
+      }
+      .about-img,
+      .about-content {
+        flex: 1 1 100%;
+        padding: 0 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home" aria-label="Go to home section">Home</a></li>
+      <li><a href="#about" aria-label="Go to about section">About</a></li>
+      <li><a href="#skills" aria-label="Go to skills section">Skills</a></li>
+      <li><a href="#projects" aria-label="Go to projects section">Projects</a></li>
+      <li><a href="#contact" aria-label="Go to contact section">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="home" class="hero" tabindex="-1">
+    <div class="container">
+      <h1>Ajay Kumar</h1>
+      <p>Hi, I’m Ajay — passionate about web development. Skilled in HTML, CSS, JavaScript, and always learning more!</p>
+      <button class="btn" type="button" aria-label="Hire Ajay Kumar">Hire Me</button>
+    </div>
+  </section>
+
+  <section id="about" class="about-section container" tabindex="-1">
+    <div class="about-img">
+      <img src="ajay01.jpg" alt="Ajay Kumar Profile Picture" />
+    </div>
+    <div class="about-content">
+      <h2>About Me</h2>
+      <p>My name is Ajay Yadav, and I’m pursuing a Bachelor of Computer Applications (BCA) from Galgotias University. I’m passionate about creating responsive, user-friendly web applications. Through this portfolio, I aim to strengthen my development skills and explore real-world problem solving.</p>
+      <button class="btn" type="button" aria-label="Download Ajay's Resume">Download Resume</button>
+    </div>
+  </section>
+
+  <section id="skills" class="skills-section container" tabindex="-1">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>C Language</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="projects-section container" tabindex="-1">
+    <h2>Projects</h2>
+    <div class="projects-list">
+      <article class="project-item" tabindex="0" aria-labelledby="project1-title">
+        <img src="portfolio01.jpg" alt="Ajay Kumar Portfolio Project" />
+        <h3 id="project1-title">Personal Portfolio Website</h3>
+        <p>A professional portfolio website built using HTML, CSS, and JavaScript showcasing my profile, skills, and projects.</p>
+      </article>
+
+      <article class="project-item" tabindex="0" aria-labelledby="project2-title">
+        <img src="landing01.jpg" alt="Starbucks Landing Page Project" />
+        <h3 id="project2-title">Starbucks Landing Page</h3>
+        <p>A Starbucks landing page clone developed to practice responsive design and modern UI concepts.</p>
+      </article>
+
+      <article class="project-item" tabindex="0" aria-labelledby="project3-title">
+        <img src="calculator01.jpg" alt="Calculator Project" />
+        <h3 id="project3-title">Calculator</h3>
+        <p>Simple calculator app built with HTML, CSS, and JavaScript to perform basic arithmetic operations.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section container" tabindex="-1">
+    <h2>Contact Me</h2>
+    <p> Email: <a href="mailto:sy662434@gmail.com" aria-label="Email Ajay Yadav">sy662434@gmail.com</a></p>
+    <p> Phone: <a href="tel:+919870583081" aria-label="Call Ajay Yadav">+91 9870583081</a></p>
+    <p> LinkedIn: <a href="https://www.linkedin.com/in/ajay-yadav-369bb9359" target="_blank" rel="noopener noreferrer" aria-label="Visit Ajay Yadav's LinkedIn Profile">linkedin.com/in/ajay-yadav</a></p>
+  </section>
+
+  <footer>
+    <p>©️ 2025 Ajay Kumar | All Rights Reserved.</p>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beanify Coffee | Taste the Craft</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Beanify Coffee</a>
+    <div class="toggle"></div>
+    <ul class="nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Menu</a></li>
+      <li><a href="#">Our Story</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </header>
+
+  <section class="hero">
+    <div class="text">
+      <h2>Freshly Brewed <br><span>Every Morning</span></h2>
+      <p>At Beanify, each cup tells a story. Brewed with passion and served with love — crafted for coffee lovers like you.</p>
+      <a href="#" class="btn">Grab Your Brew</a>
+      <div class="social">
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="image">
+      <img src="images/coffee.png" alt="coffee cup">
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Beanify Coffee. Crafted with care.</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.toggle');
+    const nav = document.querySelector('.nav');
+    toggle.onclick = function() {
+      toggle.classList.toggle('active');
+      nav.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
